@@ -12,6 +12,7 @@ Verify basic search functionality for eBay
     [Tags]  Functional
 
     Open Browser  https://www.ebay.com  chrome
+# you can easily change the browser by texting firefox, safari etc
     Maximize Browser Window
 
     Input Text  //*[@id="gh-ac"]  mobile

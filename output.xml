@@ -1,119 +1,283 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on darwin)" generated="20221228 10:24:34.638" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on darwin)" generated="20221229 09:54:01.561" rpa="false" schemaversion="3">
 <suite id="s1" name="RobotFWTutuorial" source="/Users/emregul/PycharmProjects/RobotFWTutuorial">
 <suite id="s1-s1" name="Tests" source="/Users/emregul/PycharmProjects/RobotFWTutuorial/Tests">
-<suite id="s1-s1-s1" name="eBay" source="/Users/emregul/PycharmProjects/RobotFWTutuorial/Tests/eBay">
-<suite id="s1-s1-s1-s1" name="Verify search functionality" source="/Users/emregul/PycharmProjects/RobotFWTutuorial/Tests/eBay/Verify_search_functionality.robot">
-<test id="s1-s1-s1-s1-t1" name="Verify basic search functionality" line="13">
-<kw name="Start TestCase" library="CommonFunctionality" type="SETUP">
+<suite id="s1-s1-s1" name="AutomationExercise" source="/Users/emregul/PycharmProjects/RobotFWTutuorial/Tests/AutomationExercise">
+<suite id="s1-s1-s1-s1" name="TC 01 RegisterUser" source="/Users/emregul/PycharmProjects/RobotFWTutuorial/Tests/AutomationExercise/TC_01_RegisterUser.robot">
+<test id="s1-s1-s1-s1-t1" name="Scenario: Register User" line="29">
+<kw name="Given Launch browser and Navigate to url 'http://automationexercise.com'">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.ebay.com</arg>
+<arg>http://automationexercise.com</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221228 10:24:34.776" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20221228 10:24:34.776" endtime="20221228 10:24:43.540"/>
+<msg timestamp="20221229 09:54:01.680" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<status status="PASS" starttime="20221229 09:54:01.680" endtime="20221229 09:54:11.932"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221228 10:24:43.540" endtime="20221228 10:24:44.294"/>
+<status status="PASS" starttime="20221229 09:54:11.932" endtime="20221229 09:54:22.768"/>
 </kw>
-<status status="PASS" starttime="20221228 10:24:34.776" endtime="20221228 10:24:44.294"/>
+<status status="PASS" starttime="20221229 09:54:01.680" endtime="20221229 09:54:22.769"/>
 </kw>
-<kw name="Input Search Text and Click Search" library="HeaderPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-ac"]</arg>
-<arg>mobile</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221228 10:24:44.294" level="INFO">Typing text 'mobile' into text field 'xpath://*[@id="gh-ac"]'.</msg>
-<status status="PASS" starttime="20221228 10:24:44.294" endtime="20221228 10:25:00.525"/>
+<kw name="Then Verify that home page is visible successfully">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>css:header[id='header'] li:nth-child(1) a:nth-child(1)</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221229 09:54:22.878" level="INFO">Current page contains element 'css:header[id='header'] li:nth-child(1) a:nth-child(1)'.</msg>
+<status status="PASS" starttime="20221229 09:54:22.769" endtime="20221229 09:54:22.878"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>xpath://*[@id="gh-btn"]</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20221228 10:25:00.525" level="INFO">Sending key(s) ('RETURN',) to xpath://*[@id="gh-btn"] element.</msg>
-<msg timestamp="20221228 10:25:07.334" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20221228 10:25:07.334" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20221228 10:25:00.525" endtime="20221228 10:25:07.384"/>
+<status status="PASS" starttime="20221229 09:54:22.769" endtime="20221229 09:54:22.878"/>
 </kw>
-<status status="PASS" starttime="20221228 10:24:44.294" endtime="20221228 10:25:07.384"/>
-</kw>
-<kw name="Verify Search Results" library="SearchResultsPage">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>results for mobile</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221228 10:25:07.545" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20221228 10:25:07.384" endtime="20221228 10:25:07.546"/>
-</kw>
-<status status="PASS" starttime="20221228 10:25:07.384" endtime="20221228 10:25:07.546"/>
-</kw>
-<kw name="Finish TestCase" library="CommonFunctionality" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221228 10:25:07.546" endtime="20221228 10:25:07.636"/>
-</kw>
-<status status="PASS" starttime="20221228 10:25:07.546" endtime="20221228 10:25:07.636"/>
-</kw>
-<doc>This test case verify the basic search</doc>
-<tag>Functional</tag>
-<status status="PASS" starttime="20221228 10:24:34.776" endtime="20221228 10:25:07.636"/>
-</test>
-<test id="s1-s1-s1-s1-t2" name="Verify advanced search functionality" line="20">
-<kw name="Start TestCase" library="CommonFunctionality" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.ebay.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221228 10:25:07.637" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com'.</msg>
-<status status="PASS" starttime="20221228 10:25:07.637" endtime="20221228 10:25:15.534"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221228 10:25:15.534" endtime="20221228 10:25:16.230"/>
-</kw>
-<status status="PASS" starttime="20221228 10:25:07.637" endtime="20221228 10:25:16.230"/>
-</kw>
-<kw name="Click on Advanced Search Link" library="HeaderPage">
+<kw name="Then Click on 'Signup / Login' button">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="gh-as-a"]</arg>
+<arg>css:i.fa.fa-lock</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221228 10:25:16.230" level="INFO">Clicking element '//*[@id="gh-as-a"]'.</msg>
-<status status="PASS" starttime="20221228 10:25:16.230" endtime="20221228 10:25:28.129"/>
+<msg timestamp="20221229 09:54:22.878" level="INFO">Clicking element 'css:i.fa.fa-lock'.</msg>
+<status status="PASS" starttime="20221229 09:54:22.878" endtime="20221229 09:54:27.731"/>
 </kw>
-<status status="PASS" starttime="20221228 10:25:16.230" endtime="20221228 10:25:28.129"/>
+<status status="PASS" starttime="20221229 09:54:22.878" endtime="20221229 09:54:27.731"/>
 </kw>
-<kw name="Finish TestCase" library="CommonFunctionality" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221228 10:25:28.129" endtime="20221228 10:25:28.216"/>
+<kw name="Then Verify 'New User Signup!' is visible">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>css:div.signup-form</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221229 09:54:27.737" level="INFO">Current page contains element 'css:div.signup-form'.</msg>
+<status status="PASS" starttime="20221229 09:54:27.731" endtime="20221229 09:54:27.737"/>
 </kw>
-<status status="PASS" starttime="20221228 10:25:28.129" endtime="20221228 10:25:28.216"/>
+<status status="PASS" starttime="20221229 09:54:27.731" endtime="20221229 09:54:27.737"/>
 </kw>
-<doc>This test case verifies the advanced search</doc>
-<tag>Functional</tag>
-<status status="PASS" starttime="20221228 10:25:07.637" endtime="20221228 10:25:28.216"/>
+<kw name="Then Enter name and email address">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@placeholder='Name']</arg>
+<arg>Emre Tests</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:27.738" level="INFO">Typing text 'Emre Tests' into text field 'xpath://input[@placeholder='Name']'.</msg>
+<status status="PASS" starttime="20221229 09:54:27.738" endtime="20221229 09:54:28.106"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@data-qa='signup-email']</arg>
+<arg>emre.tests@yandex.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:28.107" level="INFO">Typing text 'emre.tests@yandex.com' into text field 'xpath://input[@data-qa='signup-email']'.</msg>
+<status status="PASS" starttime="20221229 09:54:28.107" endtime="20221229 09:54:28.184"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:27.738" endtime="20221229 09:54:28.184"/>
+</kw>
+<kw name="Then Click 'Signup' button">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[normalize-space()='Signup']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:28.185" level="INFO">Clicking element 'xpath://button[normalize-space()='Signup']'.</msg>
+<status status="PASS" starttime="20221229 09:54:28.185" endtime="20221229 09:54:30.475"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:28.185" endtime="20221229 09:54:30.475"/>
+</kw>
+<kw name="Then Verify that 'ENTER ACCOUNT INFORMATION' is visible">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://b[normalize-space()='Enter Account Information']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221229 09:54:32.401" level="INFO">Current page contains element 'xpath://b[normalize-space()='Enter Account Information']'.</msg>
+<status status="PASS" starttime="20221229 09:54:30.475" endtime="20221229 09:54:32.401"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:30.475" endtime="20221229 09:54:32.401"/>
+</kw>
+<kw name="And Fill details: Title, Name, Email, Password, Date of birth">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:#id_gender1</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:32.402" level="INFO">Clicking element 'css:#id_gender1'.</msg>
+<status status="PASS" starttime="20221229 09:54:32.402" endtime="20221229 09:54:32.461"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#password</arg>
+<arg>Emre1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:32.461" level="INFO">Typing text 'Emre1234567890' into text field 'css:#password'.</msg>
+<status status="PASS" starttime="20221229 09:54:32.461" endtime="20221229 09:54:32.574"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>css:#days</arg>
+<arg>30</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20221229 09:54:32.575" level="INFO">Selecting options from selection list 'css:#days' by index 30.</msg>
+<status status="PASS" starttime="20221229 09:54:32.574" endtime="20221229 09:54:32.878"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:#months</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221229 09:54:32.878" level="INFO">Selecting options from selection list 'css:#months' by value 1.</msg>
+<status status="PASS" starttime="20221229 09:54:32.878" endtime="20221229 09:54:32.943"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:#years</arg>
+<arg>1990</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221229 09:54:32.944" level="INFO">Selecting options from selection list 'css:#years' by value 1990.</msg>
+<status status="PASS" starttime="20221229 09:54:32.943" endtime="20221229 09:54:32.999"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:32.401" endtime="20221229 09:54:32.999"/>
+</kw>
+<kw name="Then Select checkbox 'Sign up for our newsletter!'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:#newsletter</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.000" level="INFO">Clicking element 'css:#newsletter'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.000" endtime="20221229 09:54:33.035"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:33.000" endtime="20221229 09:54:33.035"/>
+</kw>
+<kw name="Then Select checkbox 'Receive special offers from our partners!'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:#optin</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.036" level="INFO">Clicking element 'css:#optin'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.035" endtime="20221229 09:54:33.067"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:33.035" endtime="20221229 09:54:33.067"/>
+</kw>
+<kw name="Then Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#first_name</arg>
+<arg>Emre</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.067" level="INFO">Typing text 'Emre' into text field 'css:#first_name'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.067" endtime="20221229 09:54:33.125"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#last_name</arg>
+<arg>Tests</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.126" level="INFO">Typing text 'Tests' into text field 'css:#last_name'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.125" endtime="20221229 09:54:33.283"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#company</arg>
+<arg>TestingAll</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.283" level="INFO">Typing text 'TestingAll' into text field 'css:#company'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.283" endtime="20221229 09:54:33.351"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#address1</arg>
+<arg>abc street, 1111, ABC, ABC</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.351" level="INFO">Typing text 'abc street, 1111, ABC, ABC' into text field 'css:#address1'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.351" endtime="20221229 09:54:33.422"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#address2</arg>
+<arg>abc street, 1111, ABC, ABC</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.423" level="INFO">Typing text 'abc street, 1111, ABC, ABC' into text field 'css:#address2'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.422" endtime="20221229 09:54:33.500"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:#country</arg>
+<arg>United States</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221229 09:54:33.500" level="INFO">Selecting options from selection list 'css:#country' by value United States.</msg>
+<status status="PASS" starttime="20221229 09:54:33.500" endtime="20221229 09:54:33.741"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#state</arg>
+<arg>Texas</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:33.742" level="INFO">Typing text 'Texas' into text field 'css:#state'.</msg>
+<status status="PASS" starttime="20221229 09:54:33.741" endtime="20221229 09:54:34.065"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#city</arg>
+<arg>Austin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:34.065" level="INFO">Typing text 'Austin' into text field 'css:#city'.</msg>
+<status status="PASS" starttime="20221229 09:54:34.065" endtime="20221229 09:54:34.452"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath://button[normalize-space()='Create Account']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20221229 09:54:34.452" endtime="20221229 09:54:34.797"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#zipcode</arg>
+<arg>TX1111</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:34.798" level="INFO">Typing text 'TX1111' into text field 'css:#zipcode'.</msg>
+<status status="PASS" starttime="20221229 09:54:34.797" endtime="20221229 09:54:35.153"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#mobile_number</arg>
+<arg>901111111111</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:35.154" level="INFO">Typing text '901111111111' into text field 'css:#mobile_number'.</msg>
+<status status="PASS" starttime="20221229 09:54:35.153" endtime="20221229 09:54:35.475"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:33.067" endtime="20221229 09:54:35.475"/>
+</kw>
+<kw name="Then Click 'Create Account button'">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[normalize-space()='Create Account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:35.476" level="INFO">Clicking element 'xpath://button[normalize-space()='Create Account']'.</msg>
+<status status="PASS" starttime="20221229 09:54:35.476" endtime="20221229 09:54:39.966"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:35.475" endtime="20221229 09:54:39.966"/>
+</kw>
+<kw name="Then Verify that 'ACCOUNT CREATED!' is visible">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>css:#form</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20221229 09:54:39.973" level="INFO">Current page contains element 'css:#form'.</msg>
+<status status="PASS" starttime="20221229 09:54:39.966" endtime="20221229 09:54:39.973"/>
+</kw>
+<status status="PASS" starttime="20221229 09:54:39.966" endtime="20221229 09:54:39.973"/>
+</kw>
+<kw name="Then Click 'Continue' button">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@class='btn btn-primary']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221229 09:54:39.973" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<status status="PASS" starttime="20221229 09:54:39.973" endtime="20221229 09:54:40.110"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20221229 09:54:40.110" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20221229 09:54:45.768" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221229 09:54:45.768" level="FAIL">Alert not found in 5 seconds.</msg>
+<status status="FAIL" starttime="20221229 09:54:40.110" endtime="20221229 09:54:45.771"/>
+</kw>
+<status status="FAIL" starttime="20221229 09:54:39.973" endtime="20221229 09:54:45.771"/>
+</kw>
+<kw name="Then Verify that 'Logged in as username' is visible">
+<status status="NOT RUN" starttime="20221229 09:54:45.771" endtime="20221229 09:54:45.771"/>
+</kw>
+<kw name="Then Click 'Delete Account' button">
+<status status="NOT RUN" starttime="20221229 09:54:45.771" endtime="20221229 09:54:45.771"/>
+</kw>
+<kw name="Then Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button">
+<status status="NOT RUN" starttime="20221229 09:54:45.771" endtime="20221229 09:54:45.771"/>
+</kw>
+<status status="FAIL" starttime="20221229 09:54:01.679" endtime="20221229 09:54:45.772">Alert not found in 5 seconds.</status>
 </test>
-<doc>Basic Search Functionality</doc>
-<status status="PASS" starttime="20221228 10:24:34.651" endtime="20221228 10:25:28.216"/>
+<status status="FAIL" starttime="20221229 09:54:01.573" endtime="20221229 09:54:45.772"/>
 </suite>
-<status status="PASS" starttime="20221228 10:24:34.651" endtime="20221228 10:25:28.217"/>
+<status status="FAIL" starttime="20221229 09:54:01.572" endtime="20221229 09:54:45.772"/>
 </suite>
-<status status="PASS" starttime="20221228 10:24:34.650" endtime="20221228 10:25:28.218"/>
+<status status="FAIL" starttime="20221229 09:54:01.571" endtime="20221229 09:54:45.773"/>
 </suite>
-<status status="PASS" starttime="20221228 10:24:34.639" endtime="20221228 10:25:28.218"/>
+<status status="FAIL" starttime="20221229 09:54:01.562" endtime="20221229 09:54:45.773"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">Functional</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="RobotFWTutuorial">RobotFWTutuorial</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1" name="Tests">RobotFWTutuorial.Tests</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="eBay">RobotFWTutuorial.Tests.eBay</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="Verify search functionality">RobotFWTutuorial.Tests.eBay.Verify search functionality</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFWTutuorial">RobotFWTutuorial</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFWTutuorial.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="AutomationExercise">RobotFWTutuorial.Tests.AutomationExercise</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="TC 01 RegisterUser">RobotFWTutuorial.Tests.AutomationExercise.TC 01 RegisterUser</stat>
 </suite>
 </statistics>
 <errors>

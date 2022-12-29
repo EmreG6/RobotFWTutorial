@@ -21,6 +21,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
+Library    WebDriver
 
 *** Variables ***
 
@@ -106,7 +107,6 @@ Verify that 'ACCOUNT CREATED!' is visible
 
 Click 'Continue' button
     Click Element  xpath://a[@class='btn btn-primary']
-    Handle Alert
 
 Verify that 'Logged in as username' is visible
     Page Should Contain Element  xpath://header[@id='header']//li[1]//a[1]

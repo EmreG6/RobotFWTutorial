@@ -21,7 +21,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
-Library    WebDriver
 
 *** Variables ***
 
@@ -112,7 +111,13 @@ Verify that 'Logged in as username' is visible
     Page Should Contain Element  xpath://header[@id='header']//li[1]//a[1]
 
 Click 'Delete Account' button
-    Click Element  xppath://a[normalize-space()='Delete Account']
+    Sleep    10s
+    ${popup_visible}=   Run Keyword And Return Status    Element Should Be Visible   css:#aswift_1
+    Log    ${popup_visible}
+    Run Keyword If    ${popup_visible}  Select Frame    css:#aswift_1
+    Run Keyword If    ${popup_visible}  Click Element At Coordinates    css:#aswift_1    0   0
+    Run Keyword If    ${popup_visible}  Unselect Frame
+    Click Element  css:a[href="/delete_account"]
 
 Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
     Page Should Contain Element    xpath://b[normalize-space()='Account Deleted!']
